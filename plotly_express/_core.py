@@ -593,7 +593,7 @@ def infer_config(args, constructor, trace_patch):
     for param in (
         ["color_discrete_sequence", "color_continuous_scale"]
         + ["symbol_sequence", "line_dash_sequence", "template"]
-        + ["width", "height", "size_max"]
+        + ["width", "height", "size_max", "color_range"]
     ):
         if param in args and args[param] is None:
             args[param] = getattr(defaults, param)
@@ -663,6 +663,8 @@ def infer_config(args, constructor, trace_patch):
                 color_range = [cmid - delta, cmid + delta]
             else:
                 color_range = [cmin, cmax]
+                
+    color_range = args.get("color_range", color_range)
 
     if "line_dash" in args:
         grouped_attrs.append("line.dash")
