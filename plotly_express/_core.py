@@ -593,7 +593,7 @@ def infer_config(args, constructor, trace_patch):
     for param in (
         ["color_discrete_sequence", "color_continuous_scale"]
         + ["symbol_sequence", "line_dash_sequence", "template"]
-        + ["width", "height", "size_max", "color_range"]
+        + ["width", "height", "size_max"]
     ):
         if param in args and args[param] is None:
             args[param] = getattr(defaults, param)
