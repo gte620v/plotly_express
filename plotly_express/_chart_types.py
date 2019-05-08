@@ -27,6 +27,7 @@ def scatter(
     color_discrete_map={},
     color_continuous_scale=None,
     color_continuous_midpoint=None,
+    color_range=None,
     symbol_sequence=None,
     symbol_map={},
     opacity=None,
